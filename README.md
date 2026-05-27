@@ -44,7 +44,14 @@ https://dhanashreek2004.github.io/employee-portal/
 
 ```bash
 ng serve
-Open: http://localhosts:4200/
+```
+Open:
+http://localhosts:4200/
+
+## Author
+
+Dhanashree K
+
 
 
 
