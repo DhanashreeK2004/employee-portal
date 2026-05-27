@@ -41,12 +41,14 @@ https://dhanashreek2004.github.io/employee-portal/
 - Role: General User
 
 ## Run Locally
+
 ```bash
 ng serve
 Open: http://localhosts:4200/
 
-## Author
-## Dhanashree K
+
+
+
 
 ```bash
 ng serve
