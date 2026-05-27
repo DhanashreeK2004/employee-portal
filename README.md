@@ -53,9 +53,3 @@ http://localhosts:4200/
 Dhanashree K
 
 
-
-
-
-
-```bash
-ng serve
