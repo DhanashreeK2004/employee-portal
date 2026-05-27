@@ -1,0 +1,18 @@
+<div class="login-container">
+  <div class="login-box">
+    <div class="left-side">
+      <img src="/assets/background1.jpg" class="logo" />
+    </div>
+    <div class="right-side">
+      <p>Employee Portal Login</p>
+      <input type="text" placeholder="User ID" [(ngModel)]="username" />
+      <input type="password" placeholder="Password" [(ngModel)]="password" />
+      <select [(ngModel)]="role">
+        <option value="" disabled selected>Select Role</option>
+        <option>General User</option>
+        <option>Admin</option>
+      </select>
+      <button (click)="login()">LOGIN</button>
+    </div>
+  </div>
+</div>

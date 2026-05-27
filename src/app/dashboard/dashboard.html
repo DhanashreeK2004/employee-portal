@@ -1,0 +1,47 @@
+<div class="dashboard">
+  <div class="top-bar">
+    <div>
+      <h2>Welcome, {{ username }}!</h2>
+      <p>{{ role }}</p>
+    </div>
+    <button (click)="logout()">LOGOUT</button>
+  </div>
+  <h1>Welcome to Dashboard</h1>
+  <h2>User Details</h2>
+  <div class="form-container" *ngIf="currentRole === 'Admin'">
+    <input type="text" placeholder="Enter Name" [(ngModel)]="newName" />
+    <select [(ngModel)]="newRole">
+      <option value="" disabled selected>Select Role</option>
+      <option value="Admin">Admin</option>
+      <option value="User">User</option>
+    </select>
+    <select [(ngModel)]="newStatus">
+      <option value="" disabled selected>Select Status</option>
+      <option value="Active">Active</option>
+      <option value="Pending">Pending</option>
+    </select>
+    <button (click)="addUser()">Add User</button>
+  </div>
+  <div *ngIf="loading" class="loader-container">
+    <div class="loader"></div>
+    <h2>Loading Users...</h2>
+  </div>
+  <input type="text" placeholder="Search User" [(ngModel)]="searchText" />
+  <table border="1" *ngIf="!loading">
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Status</th>
+      <th *ngIf="currentRole === 'Admin'">Action</th>
+    </tr>
+    <tr *ngFor="let user of filteredUsers">
+      <td>{{ user.name }}</td>
+      <td>{{ user.role }}</td>
+      <td>{{ user.status }}</td>
+      <td *ngIf="currentRole === 'Admin'">
+        <button (click)="editUser(user)">Edit</button>
+        <button (click)="deleteUser(user.name)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
